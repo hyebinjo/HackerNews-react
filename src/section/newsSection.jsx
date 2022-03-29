@@ -29,8 +29,8 @@ export const NewsSection = ({ category }) => {
   };
 
   return (
-    <div>
-      <h className={styles.menu}>
+    <div className={styles.section}>
+      <div className={styles.menu}>
         <h1>News</h1>
         <h5 className={styles.categories} onClick={handleClick}>
           <span className={section === "top" ? styles.selected : ""}>
@@ -40,11 +40,11 @@ export const NewsSection = ({ category }) => {
             NEWEST
           </span>
         </h5>
-      </h>
+      </div>
       <ol className={styles.items}>
         {ids.slice(0, 10).map((id) => (
           <li key={id}>
-            <ArticleItem id={id} />
+            <ArticleItem id={id} news={true} />
           </li>
         ))}
       </ol>

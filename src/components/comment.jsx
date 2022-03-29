@@ -16,9 +16,9 @@ export const Comment = ({ id }) => {
   useEffect(() => getData(), []);
 
   return (
-    <div style={{ backgroundColor: "gray" }}>
+    <div>
       <span>{`${item.by}  ${item.time}`}</span>
-      <p>{`${item.text}`}</p>
+      <p dangerouslySetInnerHTML={{ __html: item.text }}></p>
     </div>
   );
 };

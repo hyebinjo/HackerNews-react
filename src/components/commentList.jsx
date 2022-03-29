@@ -5,7 +5,7 @@ export const CommentList = ({ ids }) => {
   const [commentIds, setCommentIds] = useState([]);
   useEffect(() => setCommentIds(ids), [ids]);
   return (
-    <div style={{ backgroundColor: "red" }}>
+    <div>
       {commentIds && commentIds.map((id) => <Comment key={id} id={id} />)}
     </div>
   );

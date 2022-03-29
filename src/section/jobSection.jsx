@@ -1,6 +1,7 @@
 import { Link, Routes, Route } from "react-router-dom";
 import { ArticleItem } from "../components/articleItem";
 import { useEffect, useState } from "react";
+import styles from "../css/section.module.css";
 
 export const JobSection = () => {
   const [ids, setIds] = useState([]);
@@ -18,7 +19,7 @@ export const JobSection = () => {
   useEffect(() => getIds(), []);
 
   return (
-    <div>
+    <div className={styles.section}>
       <h2>Job</h2>
       <Routes>
         <Route

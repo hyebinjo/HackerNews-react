@@ -2,7 +2,7 @@ import styles from "../css/articleItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export const ArticleItem = ({ id }) => {
+export const ArticleItem = ({ id, news }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -18,7 +18,7 @@ export const ArticleItem = ({ id }) => {
   useEffect(() => getData(), []);
 
   return (
-    <div className={styles.article}>
+    <div className={news ? styles.news : styles.article}>
       <span className="header">by {item.by}</span>
       <h4>{item.title}</h4>
       {/* <p>{item.text}</p> */}
@@ -26,7 +26,7 @@ export const ArticleItem = ({ id }) => {
         scroe: {item.score}{" "}
         <Link to={`/item/${id}`}>comment: {item.descendants}</Link>
         {item.url ? (
-          <a href={`${item.url}`} target={"_blank"}>
+          <a href={`${item.url}`}>
             <button> -> </button>
           </a>
         ) : (

@@ -34,46 +34,46 @@ export default function App() {
         <Route
           path="/top"
           element={
-            <>
+            <main>
               <Header />
               <NewsList category={"top"} />
-            </>
+            </main>
           }
         ></Route>
         <Route
           path="/new"
           element={
-            <>
+            <main>
               <Header />
               <NewsList category={"new"} />
-            </>
+            </main>
           }
         ></Route>
         <Route
           path="/show"
           element={
-            <>
+            <main>
               <Header />
               <ShowList />
-            </>
+            </main>
           }
         ></Route>
         <Route
           path="/ask"
           element={
-            <>
+            <main>
               <Header />
               <AskList />
-            </>
+            </main>
           }
         ></Route>
         <Route
           path="/job"
           element={
-            <>
+            <main>
               <Header />
               <JobList />
-            </>
+            </main>
           }
         ></Route>
         <Route path="/item/:id" element={<Article />}></Route>

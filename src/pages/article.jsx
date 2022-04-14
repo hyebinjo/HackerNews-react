@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CommentList } from "../components/commentList";
 import { PageHeader } from "../components/pageHeader";
+import styles from "./article.module.css";
 
 export const Article = () => {
   let params = useParams();
@@ -24,16 +25,16 @@ export const Article = () => {
       <PageHeader />
       <main>
         <h>Ask</h>
-        <posting>
+        <p class={styles.article}>
           <span>
             {item.by} {item.time}
           </span>
           <h3>{item.title}</h3>
-          {item.text && <p>{item.text}</p>}
+          {item.text && <p dangerouslySetInnerHTML={{ __html: item.text }}></p>}
           <span>{item.score}</span>
           <span>{item.descendants}</span>
           <CommentList ids={item.kids} />
-        </posting>
+        </p>
       </main>
     </>
   );

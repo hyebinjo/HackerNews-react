@@ -1,0 +1,58 @@
+.comment_container {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.comment_box {
+  overflow-x: scroll;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.user_image {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.comment_content {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: start;
+  overflow-x: scroll;
+}
+
+.time {
+  font-size: 9px;
+  font-weight: 300;
+  line-height: 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  margin-bottom: 6px;
+  padding: 0;
+}

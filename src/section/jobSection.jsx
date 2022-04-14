@@ -1,7 +1,7 @@
 import { Link, Routes, Route } from "react-router-dom";
 import { ArticleItem } from "../components/articleItem";
 import { useEffect, useState } from "react";
-import styles from "../css/section.module.css";
+import styles from "./section.module.css";
 
 export const JobSection = () => {
   const [ids, setIds] = useState([]);

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import styles from "../css/navbar.module.css";
-import news from "../imgs/newsIcon.png";
-import show from "../imgs/showIcon.png";
-import home from "../imgs/homeIcon.png";
-import ask from "../imgs/askIcon.png";
-import job from "../imgs/jobIcon.png";
+import styles from "./navbar.module.css";
+import news from "../assets/newsIcon.png";
+import show from "../assets/showIcon.png";
+import home from "../assets/homeIcon.png";
+import ask from "../assets/askIcon.png";
+import job from "../assets/jobIcon.png";
 
 export const Navbar = () => {
   return (

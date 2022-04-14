@@ -1,8 +1,8 @@
-import styles from "../css/Header.module.css";
-import back from "../imgs/left-arrow.png";
-import search from "../imgs/search.png";
-import theme from "../imgs/theme.png";
-import about from "../imgs/about.png";
+import styles from "./header.module.css";
+import back from "../assets/left-arrow.png";
+import search from "../assets/search.png";
+import theme from "../assets/theme.png";
+import about from "../assets/about.png";
 
 export const PageHeader = () => {
   return (

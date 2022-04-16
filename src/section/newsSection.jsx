@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { NewsPreviewItem } from "../components/newsPreviewItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
@@ -32,19 +32,15 @@ export const NewsSection = ({ category }) => {
     <div className={styles.section}>
       <div className={styles.menu}>
         <h1>News</h1>
-        <h5 className={styles.categories} onClick={handleClick}>
-          <span className={section === "top" ? styles.selected : ""}>
-            POPULAR
-          </span>
-          <span className={section === "new" ? styles.selected : ""}>
-            NEWEST
-          </span>
-        </h5>
+        <div className={styles.categories} onClick={handleClick}>
+          <h5 className={section === "top" ? styles.selected : ""}>POPULAR</h5>
+          <h5 className={section === "new" ? styles.selected : ""}>NEWEST</h5>
+        </div>
       </div>
       <ol className={styles.items}>
         {ids.slice(0, 10).map((id) => (
           <li key={id}>
-            <ArticleItem id={id} news={true} />
+            <NewsPreviewItem id={id} news={true} />
           </li>
         ))}
       </ol>

@@ -57,6 +57,12 @@ h5 {
   line-height: 20px;
 }
 
+p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+}
+
 nav {
   position: fixed;
   bottom: 0;

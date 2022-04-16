@@ -27,11 +27,11 @@ export const ArticleItem = ({ id }) => {
         <Link to={`/item/${id}`}>comment: {item.descendants}</Link>
         {item.url ? (
           <a href={`${item.url}`}>
-            <button> -> </button>
+            <button> -&gt; </button>
           </a>
         ) : (
           <Link to={`/item/${id}`}>
-            <button> -> </button>
+            <button> -&gt; </button>
           </Link>
         )}
       </div>

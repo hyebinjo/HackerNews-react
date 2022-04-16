@@ -1,5 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { ShowItem } from "../components/showItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
@@ -28,14 +28,14 @@ export const ShowSection = () => {
             <ol>
               {ids.slice(0, 2).map((id) => (
                 <li key={id}>
-                  <ArticleItem id={id} />
+                  <ShowItem id={id} />
                 </li>
               ))}
             </ol>
           }
         ></Route>
       </Routes>
-      <Link to={`/show`}> View More > </Link>
+      <Link to={`/show`}> View More &gt; </Link>
     </div>
   );
 };

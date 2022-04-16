@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { CommentList } from "./commentList";
 import styles from "./comment.module.css";
-import arrow from "../assets/turn-down-right.png";
-import user from "../assets/user-circle.png";
+import arrow from "../assets/turn-down-right.svg";
+import user from "../assets/user-circle.svg";
 
 export const Comment = ({ id }) => {
   const [item, setItem] = useState({});

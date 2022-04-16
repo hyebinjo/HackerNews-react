@@ -24,7 +24,7 @@ export const Article = () => {
     <>
       <PageHeader />
       <main>
-        <h>Ask</h>
+        <h1>Ask</h1>
         <p class={styles.article}>
           <span>
             {item.by} {item.time}

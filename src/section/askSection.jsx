@@ -35,7 +35,7 @@ export const AskSection = () => {
           }
         ></Route>
       </Routes>
-      <Link to={`/ask`}> View More > </Link>
+      <Link to={`/ask`}> View More &gt; </Link>
     </div>
   );
 };

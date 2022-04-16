@@ -35,7 +35,7 @@ export const JobSection = () => {
           }
         ></Route>
       </Routes>
-      <Link to={`/job`}> View More > </Link>
+      <Link to={`/job`}> View More &gt; </Link>
     </div>
   );
 };

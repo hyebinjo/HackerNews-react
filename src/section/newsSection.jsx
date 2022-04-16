@@ -44,7 +44,7 @@ export const NewsSection = ({ category }) => {
           </li>
         ))}
       </ol>
-      <Link to={`/${category}`}> View More > </Link>
+      <Link to={`/${category}`}> View More &gt; </Link>
     </div>
   );
 };

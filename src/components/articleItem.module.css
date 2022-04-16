@@ -7,13 +7,3 @@
   padding: 8px;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
 }
-
-.news {
-  background-color: white;
-  margin-right: 10px;
-  width: 260px;
-  height: 100%;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
-}

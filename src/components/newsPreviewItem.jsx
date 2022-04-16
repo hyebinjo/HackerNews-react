@@ -21,24 +21,28 @@ export const NewsPreviewItem = ({ id, news }) => {
 
   return (
     <div className={styles.news}>
-      {item.url ? <button>github.com</button> : <button>hackernews.com</button>}
+      {item.url ? (
+        <button className={styles.button}>github.com</button>
+      ) : (
+        <button className={styles.button}>hackernews.com</button>
+      )}
       {item.url ? (
         <a href={`${item.url}`}>
-          <h4>{item.title}</h4>
+          <h4 className={styles.title}>{item.title}</h4>
         </a>
       ) : (
         <Link to={`/item/${id}`}>
-          <h4>{item.title}</h4>
+          <h4 className={styles.title}>{item.title}</h4>
         </Link>
       )}
       <strong>By {item.by}</strong>
       <div className={styles.footer}>
-        <span>{item.time}</span>
+        <span className={styles.time}>{item.time}</span>
         <strong className={styles.footer__info}>
-          <img src={score} alt="score" />
+          <img className={styles.footer__img} src={score} alt="score" />
           {item.score}
           <Link to={`/item/${id}`}>
-            <img src={comment} alt="comment" />
+            <img className={styles.footer__img} src={comment} alt="comment" />
             {item.descendants}
           </Link>
         </strong>

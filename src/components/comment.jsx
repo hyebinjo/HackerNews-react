@@ -20,14 +20,13 @@ export const Comment = ({ id }) => {
   const handleClick = () => {
     if (!comments) {
       setComments(true);
-      console.log(comments);
     } else {
       setComments(false);
     }
   };
 
   useEffect(() => getData(), []);
-  console.log();
+
   return (
     <>
       <div className={styles.comment_container}>

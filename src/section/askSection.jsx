@@ -1,5 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { AskItem } from "../components/askItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
@@ -28,7 +28,7 @@ export const AskSection = () => {
             <ol>
               {ids.slice(0, 2).map((id) => (
                 <li key={id}>
-                  <ArticleItem id={id} />
+                  <AskItem id={id} />
                 </li>
               ))}
             </ol>

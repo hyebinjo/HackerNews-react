@@ -1,0 +1,29 @@
+.comment_container {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.comment_box {
+  display: flex;
+  padding: 0 16px;
+  margin-top: 10px;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.comment_content {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  max-height: 63px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

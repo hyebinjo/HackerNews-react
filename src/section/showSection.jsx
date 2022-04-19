@@ -28,7 +28,9 @@ export const ShowSection = () => {
           </li>
         ))}
       </ol>
-      <Link to={`/show`}> View More &gt; </Link>
+      <Link to={`/show`} className={styles.section_page_link}>
+        View More &gt;
+      </Link>
     </div>
   );
 };

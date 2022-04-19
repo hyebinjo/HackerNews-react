@@ -28,7 +28,9 @@ export const JobSection = () => {
           </li>
         ))}
       </ol>
-      <Link to={`/job`}> View More &gt; </Link>
+      <Link to={`/job`} className={styles.section_page_link}>
+        View More &gt;
+      </Link>
     </div>
   );
 };

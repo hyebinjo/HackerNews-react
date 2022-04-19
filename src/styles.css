@@ -43,6 +43,13 @@ h1 {
   line-height: 52px;
 }
 
+h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
 h4 {
   margin: 0;
   font-size: 20px;

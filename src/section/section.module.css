@@ -1,6 +1,7 @@
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   text-align: start;
+  position: relative;
 }
 
 .menu {
@@ -29,4 +30,9 @@
   overflow: scroll;
   margin-bottom: 8px;
   height: 169px;
+}
+
+.section_page_link {
+  position: absolute;
+  right: 0;
 }

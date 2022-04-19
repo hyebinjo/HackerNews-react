@@ -1,5 +1,5 @@
-import { Link, Routes, Route } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { Link } from "react-router-dom";
+import { JobItem } from "../components/jobItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
@@ -21,10 +21,10 @@ export const JobSection = () => {
   return (
     <div className={styles.section}>
       <h2>Job</h2>
-      <ol>
-        {ids.slice(0, 2).map((id) => (
+      <ol className={styles.items}>
+        {ids.slice(0, 10).map((id) => (
           <li key={id}>
-            <ArticleItem id={id} />
+            <JobItem id={id} />
           </li>
         ))}
       </ol>

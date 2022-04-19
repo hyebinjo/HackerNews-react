@@ -1,4 +1,4 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AskItem } from "../components/askItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";

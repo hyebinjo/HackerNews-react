@@ -21,20 +21,13 @@ export const JobSection = () => {
   return (
     <div className={styles.section}>
       <h2>Job</h2>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ol>
-              {ids.slice(0, 2).map((id) => (
-                <li key={id}>
-                  <ArticleItem id={id} />
-                </li>
-              ))}
-            </ol>
-          }
-        ></Route>
-      </Routes>
+      <ol>
+        {ids.slice(0, 2).map((id) => (
+          <li key={id}>
+            <ArticleItem id={id} />
+          </li>
+        ))}
+      </ol>
       <Link to={`/job`}> View More &gt; </Link>
     </div>
   );

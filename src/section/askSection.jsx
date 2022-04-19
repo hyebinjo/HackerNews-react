@@ -21,20 +21,13 @@ export const AskSection = () => {
   return (
     <div className={styles.section}>
       <h2>Ask</h2>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ol>
-              {ids.slice(0, 2).map((id) => (
-                <li key={id}>
-                  <AskItem id={id} />
-                </li>
-              ))}
-            </ol>
-          }
-        ></Route>
-      </Routes>
+      <ol>
+        {ids.slice(0, 2).map((id) => (
+          <li key={id}>
+            <AskItem id={id} />
+          </li>
+        ))}
+      </ol>
       <Link to={`/ask`}> View More &gt; </Link>
     </div>
   );

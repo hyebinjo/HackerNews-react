@@ -21,20 +21,13 @@ export const ShowSection = () => {
   return (
     <div className={styles.section}>
       <h2>Show</h2>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ol>
-              {ids.slice(0, 2).map((id) => (
-                <li key={id}>
-                  <ShowItem id={id} />
-                </li>
-              ))}
-            </ol>
-          }
-        ></Route>
-      </Routes>
+      <ol>
+        {ids.slice(0, 2).map((id) => (
+          <li key={id}>
+            <ShowItem id={id} />
+          </li>
+        ))}
+      </ol>
       <Link to={`/show`}> View More &gt; </Link>
     </div>
   );

@@ -1,4 +1,4 @@
-.news {
+.item {
   background-color: white;
   margin-right: 10px;
   width: 277px;
@@ -22,8 +22,11 @@
 }
 
 .title {
-  height: 78px;
-  overflow: scroll;
+  height: 52px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .footer {

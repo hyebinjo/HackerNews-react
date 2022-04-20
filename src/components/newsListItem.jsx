@@ -22,7 +22,11 @@ export const NewsListItem = ({ id, news }) => {
 
   return (
     <div className={styles.news}>
-      {item.url && <button className={styles.button}>github.com</button>}
+      {item.url ? (
+        <button className={styles.button}>github.com</button>
+      ) : (
+        <button className={styles.button}>hackernews.com</button>
+      )}
       <Link to={`/item/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p

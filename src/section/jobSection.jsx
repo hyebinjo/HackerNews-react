@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { JobItem } from "../components/jobItem";
+import { JobPreviewItem } from "../components/jobPreviewItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
@@ -24,7 +24,7 @@ export const JobSection = () => {
       <ol className={styles.items}>
         {ids.slice(0, 10).map((id) => (
           <li key={id}>
-            <JobItem id={id} />
+            <JobPreviewItem id={id} />
           </li>
         ))}
       </ol>

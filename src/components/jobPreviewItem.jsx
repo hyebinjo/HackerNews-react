@@ -1,9 +1,9 @@
-import styles from "./jobItem.module.css";
+import styles from "./jobPreviewItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import rightArrow from "../assets/right-arrow.svg";
 
-export const JobItem = ({ id, news }) => {
+export const JobPreviewItem = ({ id, news }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -19,13 +19,16 @@ export const JobItem = ({ id, news }) => {
   useEffect(() => getData(), []);
 
   return (
-    <div className={styles.news}>
+    <div className={styles.item}>
       {item.url ? (
         <button className={styles.button}>github.com</button>
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <h4 className={styles.title}>{item.title}</h4>
+      <Link to={`/item/${id}`}>
+        <h4 className={styles.title}>{item.title}</h4>
+      </Link>
+      <strong>By {item.by}</strong>
       <div className={styles.footer}>
         <span className={styles.time}>{item.time}</span>
         {item.url ? (

@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { AskItem } from "../components/askItem";
 import { useEffect, useState } from "react";
+import styles from "./list.module.css";
 
 export const AskList = () => {
   const [ids, setIds] = useState([]);
@@ -18,22 +18,15 @@ export const AskList = () => {
   useEffect(() => getIds(), []);
 
   return (
-    <div className="page">
-      <h2>Ask</h2>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ol>
-              {ids.map((id) => (
-                <li key={id}>
-                  <ArticleItem id={id} />
-                </li>
-              ))}
-            </ol>
-          }
-        ></Route>
-      </Routes>
-    </div>
+    <>
+      <h2 className={styles.title}>Ask</h2>
+      <ol>
+        {ids.map((id) => (
+          <li key={id}>
+            <AskItem id={id} />
+          </li>
+        ))}
+      </ol>
+    </>
   );
 };

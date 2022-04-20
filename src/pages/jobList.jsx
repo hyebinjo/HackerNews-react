@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
-import { ArticleItem } from "../components/articleItem";
+import { JobItem } from "../components/jobItem";
 import { useEffect, useState } from "react";
+import styles from "./list.module.css";
 
 export const JobList = () => {
   const [ids, setIds] = useState([]);
@@ -18,22 +18,15 @@ export const JobList = () => {
   useEffect(() => getIds(), []);
 
   return (
-    <div className="page">
-      <h2>Job</h2>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ol>
-              {ids.map((id) => (
-                <li key={id}>
-                  <ArticleItem id={id} />
-                </li>
-              ))}
-            </ol>
-          }
-        ></Route>
-      </Routes>
-    </div>
+    <>
+      <h2 className={styles.title}>Job</h2>
+      <ol>
+        {ids.map((id) => (
+          <li key={id}>
+            <JobItem id={id} />
+          </li>
+        ))}
+      </ol>
+    </>
   );
 };

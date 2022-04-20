@@ -1,4 +1,4 @@
-import { JobPreviewItem } from "../components/jobPreviewItem";
+import { JobListItem } from "../components/jobListItem";
 import { useEffect, useState } from "react";
 import styles from "./list.module.css";
 
@@ -23,7 +23,7 @@ export const JobList = () => {
       <ol>
         {ids.map((id) => (
           <li key={id}>
-            <JobPreviewItem id={id} />
+            <JobListItem id={id} />
           </li>
         ))}
       </ol>

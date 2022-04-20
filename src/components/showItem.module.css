@@ -40,7 +40,7 @@
 
 .footer {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: flex-end;
   height: 30px;
   width: 100%;
@@ -64,12 +64,16 @@
   font-weight: 400;
 }
 
-.footer__info > a {
-  display: flex;
-  align-items: center;
+.scoreIcon,
+.commentIcon {
+  margin-right: 5px;
 }
 
-.footer__img {
-  margin-right: 5px;
-  margin-left: 10px;
+.commentIcon {
+  margin-left: 15px;
+}
+
+.footer > a {
+  display: flex;
+  align-items: flex-end;
 }

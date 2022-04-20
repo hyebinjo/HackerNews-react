@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import userIcon from "../assets/user-circle2.svg";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
+import linkArrow from "../assets/link-arrow.svg";
 
 export const ShowItem = ({ id }) => {
   const [item, setItem] = useState({});
@@ -25,33 +26,31 @@ export const ShowItem = ({ id }) => {
       <strong className={styles.header}>
         <img className={styles.icon} src={userIcon} alt="user icon" /> {item.by}
       </strong>
-      {item.url ? (
-        <a href={`${item.url}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-          <p
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          ></p>
-        </a>
-      ) : (
-        <Link to={`/item/${id}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-          <p
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          ></p>
-        </Link>
-      )}
+      <Link to={`/item/${id}`}>
+        <h4 className={styles.title}>{item.title}</h4>
+        <p
+          className={styles.text}
+          dangerouslySetInnerHTML={{ __html: item.text }}
+        ></p>
+      </Link>
+
       <span className={styles.time}>{item.time}</span>
       <div className={styles.footer}>
         <strong className={styles.footer__info}>
-          <img className={styles.footer__img} src={score} alt="score" />
+          <img className={styles.scoreIcon} src={score} alt="score" />
           {item.score}
-          <Link to={`/item/${id}`}>
-            <img className={styles.footer__img} src={comment} alt="comment" />
-            {item.descendants}
-          </Link>
+          <img className={styles.commentIcon} src={comment} alt="comment" />
+          {item.descendants}
         </strong>
+        {item.url ? (
+          <a href={`${item.url}`}>
+            <img src={linkArrow} alt="go to link" />
+          </a>
+        ) : (
+          <Link to={`/item/${id}`}>
+            <img src={linkArrow} alt="go to link" />
+          </Link>
+        )}
       </div>
     </div>
   );

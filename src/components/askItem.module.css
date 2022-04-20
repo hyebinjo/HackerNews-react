@@ -63,12 +63,11 @@
   font-weight: 400;
 }
 
-.footer__info > a {
-  display: flex;
-  align-items: center;
+.scoreIcon,
+.commentIcon {
+  margin-right: 5px;
 }
 
-.footer__img {
-  margin-right: 5px;
-  margin-left: 10px;
+.commentIcon {
+  margin-left: 15px;
 }

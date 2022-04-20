@@ -54,11 +54,6 @@
   font-weight: 400;
 }
 
-.footer__info > a {
-  display: flex;
-  align-items: center;
-}
-
 .footer__img {
   margin-right: 5px;
   margin-left: 10px;

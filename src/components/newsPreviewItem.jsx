@@ -26,25 +26,17 @@ export const NewsPreviewItem = ({ id, news }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      {item.url ? (
-        <a href={`${item.url}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-        </a>
-      ) : (
-        <Link to={`/item/${id}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-        </Link>
-      )}
+      <Link to={`/item/${id}`}>
+        <h4 className={styles.title}>{item.title}</h4>
+      </Link>
       <strong>By {item.by}</strong>
       <div className={styles.footer}>
         <span className={styles.time}>{item.time}</span>
         <strong className={styles.footer__info}>
           <img className={styles.footer__img} src={score} alt="score" />
           {item.score}
-          <Link to={`/item/${id}`}>
-            <img className={styles.footer__img} src={comment} alt="comment" />
-            {item.descendants}
-          </Link>
+          <img className={styles.footer__img} src={comment} alt="comment" />
+          {item.descendants}
         </strong>
       </div>
     </div>

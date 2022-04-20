@@ -37,32 +37,20 @@ export const AskItem = ({ id }) => {
       <strong className={styles.header}>
         <img className={styles.icon} src={userIcon} alt="user icon" /> {item.by}
       </strong>
-      {item.url ? (
-        <a href={`${item.url}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-          <p
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          ></p>
-        </a>
-      ) : (
-        <Link to={`/item/${id}`}>
-          <h4 className={styles.title}>{item.title}</h4>
-          <p
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          ></p>
-        </Link>
-      )}
+      <Link to={`/item/${id}`}>
+        <h4 className={styles.title}>{item.title}</h4>
+        <p
+          className={styles.text}
+          dangerouslySetInnerHTML={{ __html: item.text }}
+        ></p>
+      </Link>
       <span className={styles.time}>{item.time}</span>
       <div className={styles.footer}>
         <strong className={styles.footer__info}>
-          <img className={styles.footer__img} src={score} alt="score" />
+          <img className={styles.scoreIcon} src={score} alt="score" />
           {item.score}
-          <Link to={`/item/${id}`}>
-            <img className={styles.footer__img} src={comment} alt="comment" />
-            {item.descendants}
-          </Link>
+          <img className={styles.commentIcon} src={comment} alt="comment" />
+          {item.descendants}
         </strong>
         <img
           src={viewComment ? minus : plus}

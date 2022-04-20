@@ -1,7 +1,7 @@
 import styles from "./jobPreviewItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import rightArrow from "../assets/right-arrow.svg";
+import linkArrow from "../assets/link-arrow.svg";
 
 export const JobPreviewItem = ({ id, news }) => {
   const [item, setItem] = useState({});
@@ -33,11 +33,11 @@ export const JobPreviewItem = ({ id, news }) => {
         <span className={styles.time}>{item.time}</span>
         {item.url ? (
           <a href={`${item.url}`}>
-            <img src={rightArrow} alt="go to link" />
+            <img src={linkArrow} alt="go to link" />
           </a>
         ) : (
           <Link to={`/item/${id}`}>
-            <img src={rightArrow} alt="go to link" />
+            <img src={linkArrow} alt="go to link" />
           </Link>
         )}
       </div>

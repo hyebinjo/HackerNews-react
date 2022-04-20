@@ -1,5 +1,6 @@
-import { ArticleItem } from "../components/articleItem";
+import { NewsListItem } from "../components/newsListItem";
 import { useEffect, useState } from "react";
+import styles from "./list.module.css";
 
 export const NewsList = ({ category }) => {
   const [ids, setIds] = useState([]);
@@ -18,28 +19,30 @@ export const NewsList = ({ category }) => {
   useEffect(() => getIds(menu), [menu]);
 
   const handleClick = (e) => {
-    if (e.target.className === "top") {
+    if (e.target.textContent === "POPULAR") {
       setMenu("top");
-    } else if (e.target.className === "new") {
+    } else if (e.target.textContent === "NEWEST") {
       setMenu("new");
     }
     return;
   };
 
   return (
-    <div className="page">
-      <h2>News</h2>
-      <h5 onClick={handleClick}>
-        <span className="top">popular</span>
-        <span className="new">newest</span>
-      </h5>
+    <>
+      <div className={styles.menu}>
+        <h2>News</h2>
+        <div className={styles.categories} onClick={handleClick}>
+          <h5 className={menu === "top" ? styles.selected : ""}>POPULAR</h5>
+          <h5 className={menu === "new" ? styles.selected : ""}>NEWEST</h5>
+        </div>
+      </div>
       <ol>
         {ids.map((id) => (
           <li key={id}>
-            <ArticleItem id={id} />
+            <NewsListItem id={id} />
           </li>
         ))}
       </ol>
-    </div>
+    </>
   );
 };

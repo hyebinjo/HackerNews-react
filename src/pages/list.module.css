@@ -1,0 +1,28 @@
+.page {
+  text-align: start;
+}
+
+.title {
+  padding: 10px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+  padding-top: 10px;
+}
+
+.categories {
+  width: 147px;
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: space-between;
+  color: #a0a0a0;
+}
+
+.selected {
+  color: #101010;
+  border-bottom: 1px solid #101010;
+}

@@ -2,9 +2,9 @@ import { NewsListItem } from "../components/newsListItem";
 import { useEffect, useState } from "react";
 import styles from "./list.module.css";
 
-export const NewsList = ({ category }) => {
+export const NewsList = () => {
   const [ids, setIds] = useState([]);
-  const [menu, setMenu] = useState(category);
+  const [menu, setMenu] = useState("top");
 
   const getIds = async (menu) => {
     try {

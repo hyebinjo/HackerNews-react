@@ -26,14 +26,13 @@ export const ShowItem = ({ id }) => {
       <strong className={styles.header}>
         <img className={styles.icon} src={userIcon} alt="user icon" /> {item.by}
       </strong>
-      <Link to={`/item/${id}`}>
+      <Link to={`/Show/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}
           dangerouslySetInnerHTML={{ __html: item.text }}
         ></p>
       </Link>
-
       <span className={styles.time}>{item.time}</span>
       <div className={styles.footer}>
         <strong className={styles.footer__info}>
@@ -47,7 +46,7 @@ export const ShowItem = ({ id }) => {
             <img src={linkArrow} alt="go to link" />
           </a>
         ) : (
-          <Link to={`/item/${id}`}>
+          <Link to={`/Show/${id}`}>
             <img src={linkArrow} alt="go to link" />
           </Link>
         )}

@@ -28,7 +28,7 @@ export const AskSection = () => {
           </li>
         ))}
       </ol>
-      <Link to={`/ask`} className={styles.section_page_link}>
+      <Link to={`/Ask`} className={styles.section_page_link}>
         View More &gt;
       </Link>
     </div>

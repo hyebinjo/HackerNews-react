@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 
-export const NewsPreviewItem = ({ id, news }) => {
+export const NewsPreviewItem = ({ id }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -26,7 +26,7 @@ export const NewsPreviewItem = ({ id, news }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/item/${id}`}>
+      <Link to={`/News/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
       </Link>
       <strong>By {item.by}</strong>

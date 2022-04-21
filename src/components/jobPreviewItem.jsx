@@ -25,7 +25,7 @@ export const JobPreviewItem = ({ id, news }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/item/${id}`}>
+      <Link to={`/Job/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
       </Link>
       <strong>By {item.by}</strong>
@@ -36,7 +36,7 @@ export const JobPreviewItem = ({ id, news }) => {
             <img src={linkArrow} alt="go to link" />
           </a>
         ) : (
-          <Link to={`/item/${id}`}>
+          <Link to={`/Job/${id}`}>
             <img src={linkArrow} alt="go to link" />
           </Link>
         )}

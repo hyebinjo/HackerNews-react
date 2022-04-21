@@ -25,7 +25,7 @@ export const JobListItem = ({ id, news }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/item/${id}`}>
+      <Link to={`/Job/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}
@@ -42,7 +42,7 @@ export const JobListItem = ({ id, news }) => {
             <img src={linkArrow} alt="link arrow" />
           </a>
         ) : (
-          <Link to={`/item/${id}`}>
+          <Link to={`/Job/${id}`}>
             <img src={linkArrow} alt="link arrow" />
           </Link>
         )}

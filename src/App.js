@@ -23,7 +23,7 @@ export default function App() {
               <Header />
               <main>
                 <strong className="welcome">Welcome!</strong>
-                <NewsSection category={"top"} />
+                <NewsSection />
                 <ShowSection />
                 <AskSection />
                 <JobSection />
@@ -32,25 +32,16 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/top"
+          path="/News"
           element={
             <main>
               <Header />
-              <NewsList category={"top"} />
+              <NewsList />
             </main>
           }
         ></Route>
         <Route
-          path="/new"
-          element={
-            <main>
-              <Header />
-              <NewsList category={"new"} />
-            </main>
-          }
-        ></Route>
-        <Route
-          path="/show"
+          path="/Show"
           element={
             <main>
               <Header />
@@ -59,7 +50,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/ask"
+          path="/Ask"
           element={
             <main>
               <Header />
@@ -68,7 +59,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/job"
+          path="/Job"
           element={
             <main>
               <Header />
@@ -76,7 +67,7 @@ export default function App() {
             </main>
           }
         ></Route>
-        <Route path="/item/:id" element={<Article />}></Route>
+        <Route path="/:section/:id" element={<Article />}></Route>
       </Routes>
       <Navbar />
     </div>

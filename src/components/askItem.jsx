@@ -37,7 +37,7 @@ export const AskItem = ({ id }) => {
       <strong className={styles.header}>
         <img className={styles.icon} src={userIcon} alt="user icon" /> {item.by}
       </strong>
-      <Link to={`/item/${id}`}>
+      <Link to={`/Ask/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}

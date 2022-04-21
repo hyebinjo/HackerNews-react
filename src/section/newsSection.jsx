@@ -3,9 +3,9 @@ import { NewsPreviewItem } from "../components/newsPreviewItem";
 import { useEffect, useState } from "react";
 import styles from "./section.module.css";
 
-export const NewsSection = ({ category }) => {
+export const NewsSection = () => {
   const [ids, setIds] = useState([]);
-  const [section, setSection] = useState(category);
+  const [section, setSection] = useState("top");
 
   const getIds = async (menu) => {
     try {
@@ -40,11 +40,11 @@ export const NewsSection = ({ category }) => {
       <ol className={styles.items}>
         {ids.slice(0, 10).map((id) => (
           <li key={id}>
-            <NewsPreviewItem id={id} news={true} />
+            <NewsPreviewItem id={id} />
           </li>
         ))}
       </ol>
-      <Link to={`/${section}`} className={styles.section_page_link}>
+      <Link to={`/News`} className={styles.section_page_link}>
         View More &gt;
       </Link>
     </div>

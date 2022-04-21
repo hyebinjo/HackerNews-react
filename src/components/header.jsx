@@ -1,8 +1,8 @@
 import styles from "./header.module.css";
-import logo from "../assets/Logo.png";
-import search from "../assets/search.png";
-import theme from "../assets/theme.png";
-import about from "../assets/about.png";
+import logo from "../assets/Logo.svg";
+import search from "../assets/search.svg";
+import theme from "../assets/theme.svg";
+import about from "../assets/about.svg";
 
 export const Header = () => {
   return (

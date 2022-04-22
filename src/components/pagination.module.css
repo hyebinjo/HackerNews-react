@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+  margin: auto;
+  position: absolute;
+  bottom: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 32px;
+  border: none;
+}
+
+.pageNumbers {
+  width: 168px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageNumber {
+  width: 25px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #676767;
+}
+
+.selected {
+  color: #8c31ff;
+  border-bottom: 1px solid #8c31ff;
+}

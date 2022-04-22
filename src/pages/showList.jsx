@@ -1,9 +1,12 @@
 import { ShowItem } from "../components/showItem";
+import { Pagination } from "../components/pagination";
 import { useEffect, useState } from "react";
 import styles from "./list.module.css";
 
 export const ShowList = () => {
+  const [pageNum, setPageNum] = useState(1);
   const [ids, setIds] = useState([]);
+  const [itemIds, setItemIds] = useState([]);
 
   const getIds = async () => {
     try {
@@ -17,16 +20,21 @@ export const ShowList = () => {
 
   useEffect(() => getIds(), []);
 
+  useEffect(() => {
+    setItemIds(ids.slice((pageNum - 1) * 10, pageNum * 10));
+  }, [pageNum, ids]);
+
   return (
-    <>
+    <div className={styles.listContainer}>
       <h2 className={styles.title}>Show</h2>
       <ol>
-        {ids.map((id) => (
+        {itemIds.map((id) => (
           <li key={id}>
             <ShowItem id={id} />
           </li>
         ))}
       </ol>
-    </>
+      <Pagination length={ids.length} onClick={setPageNum} pageNum={pageNum} />
+    </div>
   );
 };

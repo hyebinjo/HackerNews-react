@@ -1,5 +1,11 @@
-.page {
+/* .page {
   text-align: start;
+} */
+
+.listContainer {
+  position: relative;
+  padding-bottom: 52px;
+  min-height: calc(100vh - 141px);
 }
 
 .title {

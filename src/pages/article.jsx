@@ -30,10 +30,12 @@ export const Article = () => {
       <div className={styles.articlePage}>
         <h2 className={styles.title}>{params.section}</h2>
         <div class={styles.article}>
-          <strong className={styles.header}>
-            <img className={styles.icon} src={userIcon} alt="user icon" />{" "}
-            {item.by}
-          </strong>
+          <Link to={`/user/${item.by}`}>
+            <strong className={styles.header}>
+              <img className={styles.icon} src={userIcon} alt="user icon" />{" "}
+              {item.by}
+            </strong>
+          </Link>
           <h4 className={styles.article__title}>{item.title}</h4>
           {item.text && (
             <p

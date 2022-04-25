@@ -55,6 +55,13 @@ h2 {
   line-height: 44px;
 }
 
+h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
 h4 {
   margin: 0;
   font-size: 20px;

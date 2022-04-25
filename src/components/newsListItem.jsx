@@ -42,7 +42,7 @@ export const NewsListItem = ({ id }) => {
       </strong>
       <div className={styles.footer}>
         <strong>
-          By {item.by + ` • `}
+          <Link to={`/user/${item.by}`}>By {item.by + ` • `}</Link>
           <span className={styles.time}>{item.time}</span>
         </strong>
         {item.url ? (

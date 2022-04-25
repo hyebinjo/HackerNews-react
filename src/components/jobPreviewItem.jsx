@@ -28,7 +28,9 @@ export const JobPreviewItem = ({ id, news }) => {
       <Link to={`/Job/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
       </Link>
-      <strong>By {item.by}</strong>
+      <Link to={`/user/${item.by}`}>
+        <strong>By {item.by}</strong>
+      </Link>
       <div className={styles.footer}>
         <span className={styles.time}>{item.time}</span>
         {item.url ? (

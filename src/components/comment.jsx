@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CommentList } from "./commentList";
 import styles from "./comment.module.css";
 import arrow from "../assets/turn-down-right.svg";
@@ -32,14 +33,16 @@ export const Comment = ({ id }) => {
       <div className={styles.comment_container}>
         <img className={styles.arrow} src={arrow} alt="reply-arrow" />
         <div className={styles.comment_box}>
-          <h5 className={styles.user}>
-            <img
-              className={styles.user_image}
-              src={user}
-              alt="comment user image"
-            />
-            {`${item.by}`}
-          </h5>
+          <Link to={`/user/${item.by}`}>
+            <h5 className={styles.user}>
+              <img
+                className={styles.user_image}
+                src={user}
+                alt="comment user image"
+              />
+              {`${item.by}`}
+            </h5>
+          </Link>
           <p
             className={styles.comment_content}
             dangerouslySetInnerHTML={{ __html: item.text }}

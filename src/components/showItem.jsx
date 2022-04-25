@@ -23,9 +23,12 @@ export const ShowItem = ({ id }) => {
 
   return (
     <div className={styles.item}>
-      <strong className={styles.header}>
-        <img className={styles.icon} src={userIcon} alt="user icon" /> {item.by}
-      </strong>
+      <Link to={`/user/${item.by}`}>
+        <strong className={styles.header}>
+          <img className={styles.icon} src={userIcon} alt="user icon" />{" "}
+          {item.by}
+        </strong>
+      </Link>
       <Link to={`/Show/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p

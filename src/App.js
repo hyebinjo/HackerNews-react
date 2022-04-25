@@ -9,6 +9,7 @@ import { ShowList } from "./pages/showList";
 import { AskList } from "./pages/askList";
 import { JobList } from "./pages/jobList";
 import { Article } from "./pages/article";
+import { UserInfo } from "./pages/userInfo";
 import { Navbar } from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
 
@@ -68,6 +69,15 @@ export default function App() {
           }
         ></Route>
         <Route path="/:section/:id" element={<Article />}></Route>
+        <Route
+          path="/user/:id"
+          element={
+            <main>
+              <Header />
+              <UserInfo />
+            </main>
+          }
+        ></Route>
       </Routes>
       <Navbar />
     </div>

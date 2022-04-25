@@ -3,11 +3,12 @@ import styles from "./pagination.module.css";
 import leftArrow from "../assets/prev-page-arrow.svg";
 import rightArrow from "../assets/next-page-arrow.svg";
 
-export const Pagination = ({ length, onClick, pageNum }) => {
+export const Pagination = ({ length, onClick, pageNum, newsMenu }) => {
   const [pageLength, setPageLength] = useState(0);
   const [startPage, setStartPage] = useState(1);
 
   useEffect(() => setPageLength(Math.ceil(length / 10)), [length]);
+  useEffect(() => setStartPage(1), [newsMenu]);
 
   const handlePageNumClick = (e) =>
     e.target.textContent && onClick(e.target.textContent);

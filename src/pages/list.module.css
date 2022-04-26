@@ -1,7 +1,3 @@
-/* .page {
-  text-align: start;
-} */
-
 .listContainer {
   position: relative;
   padding-bottom: 52px;
@@ -25,10 +21,13 @@
   display: flex;
   margin-bottom: 3px;
   justify-content: space-between;
-  color: #a0a0a0;
 }
 
 .selected {
   color: #101010;
   border-bottom: 1px solid #101010;
+}
+
+.unselected {
+  color: #a0a0a0;
 }

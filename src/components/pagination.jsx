@@ -4,19 +4,15 @@ import styles from "./pagination.module.css";
 import leftArrow from "../assets/prev-page-arrow.svg";
 import rightArrow from "../assets/next-page-arrow.svg";
 
-export const Pagination = ({ length, pageSection, pageNum, newsMenu }) => {
+export const Pagination = ({ length, pageSection, pageNum }) => {
   const navigate = useNavigate();
   const [pageLength, setPageLength] = useState(0);
   const [startPage, setStartPage] = useState(Math.ceil(pageNum / 5) * 5 - 4);
 
   useEffect(() => setPageLength(Math.ceil(length / 10)), [length]);
-  // useEffect(() => setStartPage(1), [newsMenu]);
 
   const handlePageNumClick = (e) => {
-    e.target.textContent &&
-      (newsMenu
-        ? navigate(`/${pageSection}/${newsMenu}/${e.target.textContent}`)
-        : navigate(`/${pageSection}/${e.target.textContent}`));
+    e.target.textContent && navigate(`/${pageSection}/${e.target.textContent}`);
   };
   const handlePrevClick = () => setStartPage(startPage - 5);
   const handleNextClick = () => setStartPage(startPage + 5);

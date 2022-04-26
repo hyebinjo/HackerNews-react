@@ -4,6 +4,7 @@ import { NewsSection } from "./section/newsSection";
 import { ShowSection } from "./section/showSection";
 import { AskSection } from "./section/askSection";
 import { JobSection } from "./section/jobSection";
+import { TopList } from "./pages/topList";
 import { NewsList } from "./pages/newsList";
 import { ShowList } from "./pages/showList";
 import { AskList } from "./pages/askList";
@@ -33,7 +34,16 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/News/:menu/:page"
+          path="/Top/:page"
+          element={
+            <main>
+              <Header />
+              <TopList />
+            </main>
+          }
+        ></Route>
+        <Route
+          path="/News/:page"
           element={
             <main>
               <Header />

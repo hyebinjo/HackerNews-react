@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from "./list.module.css";
 
-export const NewsList = () => {
+export const TopList = () => {
   let params = useParams();
   const [ids, setIds] = useState([]);
   const [itemIds, setItemIds] = useState([]);
@@ -12,7 +12,7 @@ export const NewsList = () => {
   const getIds = async () => {
     try {
       const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/newstories.json`
+        `https://hacker-news.firebaseio.com/v0/topstories.json`
       );
       const ids = await response.json();
       setIds(ids);
@@ -30,10 +30,10 @@ export const NewsList = () => {
       <div className={styles.menu}>
         <h2>News</h2>
         <div className={styles.categories}>
-          <Link to={"/Top/1"}>
-            <h5 className={styles.unselected}>POPULAR</h5>
+          <h5 className={styles.selected}>POPULAR</h5>
+          <Link to={"/News/1"}>
+            <h5 className={styles.unselected}>NEWEST</h5>
           </Link>
-          <h5 className={styles.selected}>NEWEST</h5>
         </div>
       </div>
       <ol>
@@ -45,7 +45,7 @@ export const NewsList = () => {
       </ol>
       <Pagination
         length={ids.length}
-        pageSection={"News"}
+        pageSection={"Top"}
         pageNum={params.page}
       />
     </div>

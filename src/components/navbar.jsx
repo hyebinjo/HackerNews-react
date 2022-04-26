@@ -9,7 +9,7 @@ import job from "../assets/jobIcon.svg";
 export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link to={"./News/top/1"} style={{ textDecoration: "none" }}>
+      <Link to={"./Top/1"} style={{ textDecoration: "none" }}>
         <button className={styles.navbarBtn}>
           <img src={news} alt="news" />
           News

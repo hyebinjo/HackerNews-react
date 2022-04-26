@@ -7,7 +7,7 @@ export const NewsSection = () => {
   const [ids, setIds] = useState([]);
   const [section, setSection] = useState("top");
 
-  const getIds = async (menu) => {
+  const getIds = async () => {
     try {
       const response = await fetch(
         `https://hacker-news.firebaseio.com/v0/${section}stories.json`
@@ -33,8 +33,8 @@ export const NewsSection = () => {
       <div className={styles.menu}>
         <h1>News</h1>
         <div className={styles.categories} onClick={handleClick}>
-          <h5 className={section === "top" ? styles.selected : ""}>POPULAR</h5>
-          <h5 className={section === "new" ? styles.selected : ""}>NEWEST</h5>
+          <h5 className={section === "top" && styles.selected}>POPULAR</h5>
+          <h5 className={section === "new" && styles.selected}>NEWEST</h5>
         </div>
       </div>
       <ol className={styles.items}>
@@ -44,7 +44,10 @@ export const NewsSection = () => {
           </li>
         ))}
       </ol>
-      <Link to={`/News/${section}/1`} className={styles.section_page_link}>
+      <Link
+        to={section === "top" ? "/Top/1" : "/News/1"}
+        className={styles.section_page_link}
+      >
         View More &gt;
       </Link>
     </div>

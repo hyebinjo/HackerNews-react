@@ -29,7 +29,7 @@ export const Article = () => {
       <PageHeader />
       <div className={styles.articlePage}>
         <h2 className={styles.title}>{params.section}</h2>
-        <div class={styles.article}>
+        <div className={styles.article}>
           <Link to={`/user/${item.by}`}>
             <strong className={styles.header}>
               <img className={styles.icon} src={userIcon} alt="user icon" />{" "}

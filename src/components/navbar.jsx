@@ -9,13 +9,13 @@ import job from "../assets/jobIcon.svg";
 export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link to={"./News"} style={{ textDecoration: "none" }}>
+      <Link to={"./News/top/1"} style={{ textDecoration: "none" }}>
         <button className={styles.navbarBtn}>
           <img src={news} alt="news" />
           News
         </button>
       </Link>
-      <Link to={"./Show"} style={{ textDecoration: "none" }}>
+      <Link to={"./Show/1"} style={{ textDecoration: "none" }}>
         <button className={styles.navbarBtn}>
           <img src={show} alt="show" />
           Show
@@ -27,13 +27,13 @@ export const Navbar = () => {
           Home
         </button>
       </Link>
-      <Link to={"./Ask"} style={{ textDecoration: "none" }}>
+      <Link to={"./Ask/1"} style={{ textDecoration: "none" }}>
         <button className={styles.navbarBtn}>
           <img src={ask} alt="ask" />
           Ask
         </button>
       </Link>
-      <Link to={"./Job"} style={{ textDecoration: "none" }}>
+      <Link to={"./Job/1"} style={{ textDecoration: "none" }}>
         <button className={styles.navbarBtn}>
           <img src={job} alt="job" />
           Job

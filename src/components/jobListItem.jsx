@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import linkArrow from "../assets/link-arrow.svg";
 
-export const JobListItem = ({ id, news }) => {
+export const JobListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -25,7 +25,7 @@ export const JobListItem = ({ id, news }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/Job/${id}`}>
+      <Link to={`/Job/${pageNum}/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}
@@ -42,7 +42,7 @@ export const JobListItem = ({ id, news }) => {
             <img src={linkArrow} alt="link arrow" />
           </a>
         ) : (
-          <Link to={`/Job/${id}`}>
+          <Link to={`/Job/${pageNum}/${id}`}>
             <img src={linkArrow} alt="link arrow" />
           </Link>
         )}

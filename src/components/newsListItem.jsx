@@ -5,7 +5,7 @@ import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
 
-export const NewsListItem = ({ id }) => {
+export const NewsListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -27,7 +27,7 @@ export const NewsListItem = ({ id }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/News/${id}`}>
+      <Link to={`/News/${pageNum}/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}
@@ -50,7 +50,7 @@ export const NewsListItem = ({ id }) => {
             <img src={linkArrow} alt="link arrow" />
           </a>
         ) : (
-          <Link to={`/News/${id}`}>
+          <Link to={`/News/${pageNum}/${id}`}>
             <img src={linkArrow} alt="link arrow" />
           </Link>
         )}

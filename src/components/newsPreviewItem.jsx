@@ -26,7 +26,7 @@ export const NewsPreviewItem = ({ id }) => {
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}
-      <Link to={`/News/${id}`}>
+      <Link to={`/News/1/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
       </Link>
       <Link to={`/user/${item.by}`}>

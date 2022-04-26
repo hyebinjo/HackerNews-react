@@ -44,7 +44,7 @@ export const NewsSection = () => {
           </li>
         ))}
       </ol>
-      <Link to={`/News`} className={styles.section_page_link}>
+      <Link to={`/News/${section}/1`} className={styles.section_page_link}>
         View More &gt;
       </Link>
     </div>

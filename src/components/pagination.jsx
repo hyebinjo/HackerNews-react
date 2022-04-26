@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./pagination.module.css";
 import leftArrow from "../assets/prev-page-arrow.svg";
 import rightArrow from "../assets/next-page-arrow.svg";
 
-export const Pagination = ({ length, onClick, pageNum, newsMenu }) => {
+export const Pagination = ({ length, pageSection, pageNum, newsMenu }) => {
+  const navigate = useNavigate();
   const [pageLength, setPageLength] = useState(0);
-  const [startPage, setStartPage] = useState(1);
+  const [startPage, setStartPage] = useState(Math.ceil(pageNum / 5) * 5 - 4);
 
   useEffect(() => setPageLength(Math.ceil(length / 10)), [length]);
-  useEffect(() => setStartPage(1), [newsMenu]);
+  // useEffect(() => setStartPage(1), [newsMenu]);
 
-  const handlePageNumClick = (e) =>
-    e.target.textContent && onClick(e.target.textContent);
+  const handlePageNumClick = (e) => {
+    e.target.textContent &&
+      (newsMenu
+        ? navigate(`/${pageSection}/${newsMenu}/${e.target.textContent}`)
+        : navigate(`/${pageSection}/${e.target.textContent}`));
+  };
   const handlePrevClick = () => setStartPage(startPage - 5);
   const handleNextClick = () => setStartPage(startPage + 5);
 
@@ -29,7 +35,6 @@ export const Pagination = ({ length, onClick, pageNum, newsMenu }) => {
       <ol className={styles.pageNumbers}>
         {new Array(5).fill("").map((_, i) => (
           <li
-            selected={true}
             onClick={handlePageNumClick}
             key={startPage + i}
             className={`${styles.pageNumber} ${

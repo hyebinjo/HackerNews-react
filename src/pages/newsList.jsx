@@ -1,12 +1,13 @@
 import { NewsListItem } from "../components/newsListItem";
 import { Pagination } from "../components/pagination";
 import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import styles from "./list.module.css";
 
 export const NewsList = () => {
+  let params = useParams();
   const [ids, setIds] = useState([]);
-  const [menu, setMenu] = useState("top");
-  const [pageNum, setPageNum] = useState(1);
+  const [menu, setMenu] = useState(params.menu);
   const [itemIds, setItemIds] = useState([]);
 
   const getIds = async (menu) => {
@@ -22,16 +23,14 @@ export const NewsList = () => {
   useEffect(() => getIds(menu), [menu]);
 
   useEffect(() => {
-    setItemIds(ids.slice((pageNum - 1) * 10, pageNum * 10));
-  }, [pageNum, ids]);
+    setItemIds(ids.slice((params.page - 1) * 10, params.page * 10));
+  }, [params.page, ids]);
 
   const handleMenuClick = (e) => {
     if (e.target.textContent === "POPULAR") {
       setMenu("top");
-      setPageNum(1);
     } else if (e.target.textContent === "NEWEST") {
       setMenu("new");
-      setPageNum(1);
     }
     return;
   };
@@ -48,14 +47,14 @@ export const NewsList = () => {
       <ol>
         {itemIds.map((id) => (
           <li key={id}>
-            <NewsListItem id={id} />
+            <NewsListItem id={id} pageNum={params.page} />
           </li>
         ))}
       </ol>
       <Pagination
         length={ids.length}
-        onClick={setPageNum}
-        pageNum={pageNum}
+        pageSection={"News"}
+        pageNum={params.page}
         newsMenu={menu}
       />
     </div>

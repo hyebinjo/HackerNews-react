@@ -6,7 +6,7 @@ import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
 
-export const ShowItem = ({ id }) => {
+export const ShowItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
 
   const getData = async () => {
@@ -29,7 +29,7 @@ export const ShowItem = ({ id }) => {
           {item.by}
         </strong>
       </Link>
-      <Link to={`/Show/${id}`}>
+      <Link to={`/Show/${pageNum}/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}
@@ -49,7 +49,7 @@ export const ShowItem = ({ id }) => {
             <img src={linkArrow} alt="go to link" />
           </a>
         ) : (
-          <Link to={`/Show/${id}`}>
+          <Link to={`/Show/${pageNum}/${id}`}>
             <img src={linkArrow} alt="go to link" />
           </Link>
         )}

@@ -33,7 +33,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/News"
+          path="/News/:menu/:page"
           element={
             <main>
               <Header />
@@ -42,7 +42,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/Show"
+          path="/Show/:page"
           element={
             <main>
               <Header />
@@ -51,7 +51,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/Ask"
+          path="/Ask/:page"
           element={
             <main>
               <Header />
@@ -60,7 +60,7 @@ export default function App() {
           }
         ></Route>
         <Route
-          path="/Job"
+          path="/Job/:page"
           element={
             <main>
               <Header />
@@ -68,7 +68,7 @@ export default function App() {
             </main>
           }
         ></Route>
-        <Route path="/:section/:id" element={<Article />}></Route>
+        <Route path="/:section/:page/:id" element={<Article />}></Route>
         <Route
           path="/user/:id"
           element={

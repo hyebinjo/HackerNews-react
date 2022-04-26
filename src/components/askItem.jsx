@@ -8,7 +8,7 @@ import plus from "../assets/plus.svg";
 import minus from "../assets/minus.svg";
 import { FirstComment } from "./firstComment";
 
-export const AskItem = ({ id }) => {
+export const AskItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
   const [viewComment, setViewComment] = useState(false);
 
@@ -40,7 +40,7 @@ export const AskItem = ({ id }) => {
           {item.by}
         </strong>
       </Link>
-      <Link to={`/Ask/${id}`}>
+      <Link to={`/Ask/${pageNum}/${id}`}>
         <h4 className={styles.title}>{item.title}</h4>
         <p
           className={styles.text}

@@ -2,7 +2,7 @@ import styles from "./jobPreviewItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import linkArrow from "../assets/link-arrow.svg";
-import { convertTime } from "../utils";
+import { convertTime, showUrl } from "../utils";
 
 export const JobPreviewItem = ({ id, news }) => {
   const [item, setItem] = useState({});
@@ -22,7 +22,7 @@ export const JobPreviewItem = ({ id, news }) => {
   return (
     <div className={styles.item}>
       {item.url ? (
-        <button className={styles.button}>github.com</button>
+        <button className={styles.button}>{showUrl(item.url)}</button>
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
-import { convertTime } from "../utils";
+import { convertTime, showUrl } from "../utils";
 
 export const NewsListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -24,7 +24,7 @@ export const NewsListItem = ({ id, pageNum }) => {
   return (
     <div className={styles.news}>
       {item.url ? (
-        <button className={styles.button}>github.com</button>
+        <button className={styles.button}>{showUrl(item.url)}</button>
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}

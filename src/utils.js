@@ -30,3 +30,14 @@ export function convertTime(timeStamp) {
     return `${nowSeconds - itemSeconds} seconds ago`;
   }
 }
+
+export function showUrl(str) {
+  let url = str.split("//");
+  if (url[0] === "http:" || url[0] === "https:") {
+    url.shift();
+  }
+  url = url[0].split("/")[0].split(".");
+  url[0] === "www" && url.shift();
+  url = url.join(".");
+  return url;
+}

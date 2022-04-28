@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
-import { convertTime } from "../utils";
+import { convertTime, showUrl } from "../utils";
 
 export const NewsPreviewItem = ({ id }) => {
   const [item, setItem] = useState({});
@@ -23,7 +23,7 @@ export const NewsPreviewItem = ({ id }) => {
   return (
     <div className={styles.news}>
       {item.url ? (
-        <button className={styles.button}>github.com</button>
+        <button className={styles.button}>{showUrl(item.url)}</button>
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}

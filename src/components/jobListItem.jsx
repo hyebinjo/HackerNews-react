@@ -2,7 +2,7 @@ import styles from "./jobListItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import linkArrow from "../assets/link-arrow.svg";
-import { convertTime } from "../utils";
+import { convertTime, showUrl } from "../utils";
 
 export const JobListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -22,7 +22,7 @@ export const JobListItem = ({ id, pageNum }) => {
   return (
     <div className={styles.news}>
       {item.url ? (
-        <button className={styles.button}>github.com</button>
+        <button className={styles.button}>{showUrl(item.url)}</button>
       ) : (
         <button className={styles.button}>hackernews.com</button>
       )}

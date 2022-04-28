@@ -4,6 +4,7 @@ import { CommentList } from "./commentList";
 import styles from "./comment.module.css";
 import arrow from "../assets/turn-down-right.svg";
 import user from "../assets/user-circle.svg";
+import { convertTime } from "../utils";
 
 export const Comment = ({ id }) => {
   const [item, setItem] = useState({});
@@ -47,7 +48,7 @@ export const Comment = ({ id }) => {
             className={styles.comment_content}
             dangerouslySetInnerHTML={{ __html: item.text }}
           ></p>
-          <span className={styles.time}>{`${item.time}`}</span>
+          <span className={styles.time}>{convertTime(item.time)}</span>
           {item.kids && (
             <button className={styles.button} onClick={handleClick}>
               {comments ? "▲ Hide reply" : "▼ View reply"}

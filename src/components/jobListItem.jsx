@@ -2,6 +2,7 @@ import styles from "./jobListItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import linkArrow from "../assets/link-arrow.svg";
+import { convertTime } from "../utils";
 
 export const JobListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -35,7 +36,7 @@ export const JobListItem = ({ id, pageNum }) => {
       <div className={styles.footer}>
         <strong>
           <Link to={`/user/${item.by}`}>By {item.by + ` • `}</Link>
-          <span className={styles.time}>{item.time}</span>
+          <span className={styles.time}>{convertTime(item.time)}</span>
         </strong>
         {item.url ? (
           <a href={`${item.url}`}>

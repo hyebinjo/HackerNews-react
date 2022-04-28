@@ -7,6 +7,7 @@ import comment from "../assets/comment.svg";
 import plus from "../assets/plus.svg";
 import minus from "../assets/minus.svg";
 import { FirstComment } from "./firstComment";
+import { convertTime } from "../utils";
 
 export const AskItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -47,7 +48,7 @@ export const AskItem = ({ id, pageNum }) => {
           dangerouslySetInnerHTML={{ __html: item.text }}
         ></p>
       </Link>
-      <span className={styles.time}>{item.time}</span>
+      <span className={styles.time}>{convertTime(item.time)}</span>
       <div className={styles.footer}>
         <strong className={styles.footer__info}>
           <img className={styles.scoreIcon} src={score} alt="score" />

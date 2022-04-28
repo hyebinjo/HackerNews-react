@@ -54,7 +54,9 @@ export const UserInfo = () => {
           </div>
           <div className={styles.userDetailList}>
             <dt className={styles.userDataTerm}>created :</dt>
-            <dd className={styles.userData}>{item.created}</dd>
+            <dd className={styles.userData}>
+              {new Date(Number(item.created) * 1000).toLocaleDateString()}
+            </dd>
           </div>
         </dl>
       </div>

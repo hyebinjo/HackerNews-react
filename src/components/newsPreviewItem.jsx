@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
+import { convertTime } from "../utils";
 
 export const NewsPreviewItem = ({ id }) => {
   const [item, setItem] = useState({});
@@ -33,7 +34,7 @@ export const NewsPreviewItem = ({ id }) => {
         <strong>By {item.by}</strong>
       </Link>
       <div className={styles.footer}>
-        <span className={styles.time}>{item.time}</span>
+        <span className={styles.time}>{convertTime(item.time)}</span>
         <strong className={styles.footer__info}>
           <img className={styles.footer__img} src={score} alt="score" />
           {item.score}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
+import { convertTime } from "../utils";
 
 export const NewsListItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -43,7 +44,7 @@ export const NewsListItem = ({ id, pageNum }) => {
       <div className={styles.footer}>
         <strong>
           <Link to={`/user/${item.by}`}>By {item.by + ` • `}</Link>
-          <span className={styles.time}>{item.time}</span>
+          <span className={styles.time}>{convertTime(item.time)}</span>
         </strong>
         {item.url ? (
           <a href={`${item.url}`}>

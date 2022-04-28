@@ -5,6 +5,7 @@ import userIcon from "../assets/user-circle2.svg";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
+import { convertTime } from "../utils";
 
 export const ShowItem = ({ id, pageNum }) => {
   const [item, setItem] = useState({});
@@ -36,7 +37,7 @@ export const ShowItem = ({ id, pageNum }) => {
           dangerouslySetInnerHTML={{ __html: item.text }}
         ></p>
       </Link>
-      <span className={styles.time}>{item.time}</span>
+      <span className={styles.time}>{convertTime(item.time)}</span>
       <div className={styles.footer}>
         <strong className={styles.footer__info}>
           <img className={styles.scoreIcon} src={score} alt="score" />

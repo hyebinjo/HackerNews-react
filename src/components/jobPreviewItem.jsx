@@ -2,6 +2,7 @@ import styles from "./jobPreviewItem.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import linkArrow from "../assets/link-arrow.svg";
+import { convertTime } from "../utils";
 
 export const JobPreviewItem = ({ id, news }) => {
   const [item, setItem] = useState({});
@@ -32,7 +33,7 @@ export const JobPreviewItem = ({ id, news }) => {
         <strong>By {item.by}</strong>
       </Link>
       <div className={styles.footer}>
-        <span className={styles.time}>{item.time}</span>
+        <span className={styles.time}>{convertTime(item.time)}</span>
         {item.url ? (
           <a href={`${item.url}`}>
             <img src={linkArrow} alt="go to link" />

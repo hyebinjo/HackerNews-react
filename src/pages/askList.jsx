@@ -3,23 +3,12 @@ import { Pagination } from "../components/pagination";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./list.module.css";
+import useFetch from "../hooks/useFetch";
 
 export const AskList = () => {
   let params = useParams();
-  const [ids, setIds] = useState([]);
+  const ids = useFetch(`askstories.json`);
   const [itemIds, setItemIds] = useState([]);
-
-  const getIds = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/askstories.json`
-      );
-      const ids = await response.json();
-      setIds(ids);
-    } catch (error) {}
-  };
-
-  useEffect(() => getIds(), []);
 
   useEffect(() => {
     setItemIds(ids.slice((params.page - 1) * 10, params.page * 10));

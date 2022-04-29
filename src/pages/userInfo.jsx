@@ -1,25 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import styles from "./userInfo.module.css";
 import back from "../assets/left-arrow2.svg";
 import user from "../assets/user-circle.svg";
+import useFetch from "../hooks/useFetch";
 
 export const UserInfo = () => {
   const params = useParams();
-  const [item, setItem] = useState({});
+  const item = useFetch(`user/${params.id}.json`);
   const navigate = useNavigate();
-
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/user/${params.id}.json`
-      );
-      const item = await response.json();
-      setItem(item);
-    } catch (error) {}
-  };
-
-  useEffect(() => getData(), []);
 
   return (
     <div className={styles.userInfoPage}>

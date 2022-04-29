@@ -1,23 +1,12 @@
 import { Link } from "react-router-dom";
 import { NewsPreviewItem } from "../components/newsPreviewItem";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./section.module.css";
+import useFetch from "../hooks/useFetch";
 
 export const NewsSection = () => {
-  const [ids, setIds] = useState([]);
   const [section, setSection] = useState("top");
-
-  const getIds = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/${section}stories.json`
-      );
-      const ids = await response.json();
-      setIds(ids);
-    } catch (error) {}
-  };
-
-  useEffect(() => getIds(section), [section]);
+  const ids = useFetch(`${section}stories.json`);
 
   const handleClick = (e) => {
     if (e.target.textContent === "POPULAR") {

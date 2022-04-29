@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { CommentList } from "../components/commentList";
 import { PageHeader } from "../components/pageHeader";
 import styles from "./article.module.css";
@@ -8,22 +7,11 @@ import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
 import linkArrow from "../assets/link-arrow.svg";
 import { convertTime } from "../utils";
+import useFetch from "../hooks/useFetch";
 
 export const Article = () => {
   let params = useParams();
-  const [item, setItem] = useState({});
-
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/item/${params.id}.json`
-      );
-      const item = await response.json();
-      setItem(item);
-    } catch (error) {}
-  };
-
-  useEffect(() => getData(), []);
+  const item = useFetch(`item/${params.id}.json`);
 
   return (
     <>

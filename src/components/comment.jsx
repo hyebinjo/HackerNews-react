@@ -1,24 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CommentList } from "./commentList";
 import styles from "./comment.module.css";
 import arrow from "../assets/turn-down-right.svg";
 import user from "../assets/user-circle.svg";
 import { convertTime } from "../utils";
+import useFetch from "../hooks/useFetch";
 
 export const Comment = ({ id }) => {
-  const [item, setItem] = useState({});
+  const item = useFetch(`item/${id}.json`);
   const [comments, setComments] = useState(false);
 
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-      );
-      const item = await response.json();
-      setItem(item);
-    } catch (error) {}
-  };
   const handleClick = () => {
     if (!comments) {
       setComments(true);
@@ -26,8 +18,6 @@ export const Comment = ({ id }) => {
       setComments(false);
     }
   };
-
-  useEffect(() => getData(), []);
 
   return (
     <>

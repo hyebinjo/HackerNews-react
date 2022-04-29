@@ -1,6 +1,6 @@
 import styles from "./askItem.module.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import userIcon from "../assets/user-circle2.svg";
 import score from "../assets/score.svg";
 import comment from "../assets/comment.svg";
@@ -8,22 +8,11 @@ import plus from "../assets/plus.svg";
 import minus from "../assets/minus.svg";
 import { FirstComment } from "./firstComment";
 import { convertTime } from "../utils";
+import useFetch from "../hooks/useFetch";
 
 export const AskItem = ({ id, pageNum }) => {
-  const [item, setItem] = useState({});
+  const item = useFetch(`item/${id}.json`);
   const [viewComment, setViewComment] = useState(false);
-
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-      );
-      const item = await response.json();
-      setItem(item);
-    } catch (error) {}
-  };
-
-  useEffect(() => getData(), []);
 
   const handleClick = () => {
     if (!viewComment) {

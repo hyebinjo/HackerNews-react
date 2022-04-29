@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
 import styles from "./firstComment.module.css";
 import arrow from "../assets/turn-down-right.svg";
+import useFetch from "../hooks/useFetch";
 
 export const FirstComment = ({ id }) => {
-  const [item, setItem] = useState({});
-
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-      );
-      const item = await response.json();
-      setItem(item);
-    } catch (error) {}
-  };
-
-  useEffect(() => getData(), []);
+  const item = useFetch(`item/${id}.json`);
 
   return (
     <div className={styles.comment_box}>

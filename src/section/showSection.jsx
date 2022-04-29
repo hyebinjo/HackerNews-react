@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { ShowItem } from "../components/showItem";
 import styles from "./section.module.css";
-import useFetch from "../hooks/useFetch";
 
-export const ShowSection = () => {
-  const ids = useFetch(`showstories.json`);
-
+export const ShowSection = ({ ids }) => {
   return (
     <div className={styles.section}>
       <h2>Show</h2>

@@ -13,8 +13,17 @@ import { Article } from "./pages/article";
 import { UserInfo } from "./pages/userInfo";
 import { Navbar } from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
+import useFetch from "./hooks/useFetch";
 
 export default function App() {
+  const ids = {
+    new: useFetch("newstories.json"),
+    top: useFetch("topstories.json"),
+    show: useFetch("showstories.json"),
+    ask: useFetch("askstories.json"),
+    job: useFetch("jobstories.json"),
+  };
+
   return (
     <div className="App">
       <Routes>
@@ -25,10 +34,10 @@ export default function App() {
               <Header />
               <main>
                 <strong className="welcome">Welcome!</strong>
-                <NewsSection />
-                <ShowSection />
-                <AskSection />
-                <JobSection />
+                <NewsSection topIds={ids.top} newIds={ids.new} />
+                <ShowSection ids={ids.show} />
+                <AskSection ids={ids.ask} />
+                <JobSection ids={ids.job} />
               </main>
             </>
           }
@@ -38,7 +47,7 @@ export default function App() {
           element={
             <main>
               <Header />
-              <TopList />
+              <TopList ids={ids.top} />
             </main>
           }
         ></Route>
@@ -47,7 +56,7 @@ export default function App() {
           element={
             <main>
               <Header />
-              <NewsList />
+              <NewsList ids={ids.new} />
             </main>
           }
         ></Route>
@@ -56,7 +65,7 @@ export default function App() {
           element={
             <main>
               <Header />
-              <ShowList />
+              <ShowList ids={ids.show} />
             </main>
           }
         ></Route>
@@ -65,7 +74,7 @@ export default function App() {
           element={
             <main>
               <Header />
-              <AskList />
+              <AskList ids={ids.ask} />
             </main>
           }
         ></Route>
@@ -74,7 +83,7 @@ export default function App() {
           element={
             <main>
               <Header />
-              <JobList />
+              <JobList ids={ids.job} />
             </main>
           }
         ></Route>

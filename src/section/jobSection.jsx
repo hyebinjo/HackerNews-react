@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { JobPreviewItem } from "../components/jobPreviewItem";
 import styles from "./section.module.css";
-import useFetch from "../hooks/useFetch";
 
-export const JobSection = () => {
-  const ids = useFetch(`jobstories.json`);
-
+export const JobSection = ({ ids }) => {
   return (
     <div className={styles.section}>
       <h2>Job</h2>

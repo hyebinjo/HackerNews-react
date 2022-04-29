@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { AskItem } from "../components/askItem";
 import styles from "./section.module.css";
-import useFetch from "../hooks/useFetch";
 
-export const AskSection = () => {
-  const ids = useFetch(`askstories.json`);
-
+export const AskSection = ({ ids }) => {
   return (
     <div className={styles.section}>
       <h2>Ask</h2>

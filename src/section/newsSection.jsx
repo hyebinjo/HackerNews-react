@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import { NewsPreviewItem } from "../components/newsPreviewItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./section.module.css";
-import useFetch from "../hooks/useFetch";
 
-export const NewsSection = () => {
-  const [section, setSection] = useState("top");
-  const ids = useFetch(`${section}stories.json`);
+export const NewsSection = ({ topIds, newIds }) => {
+  const [ids, setIds] = useState(topIds);
+  useEffect(() => setIds(topIds), [topIds]);
 
   const handleClick = (e) => {
     if (e.target.textContent === "POPULAR") {
-      setSection("top");
+      setIds(topIds);
     } else if (e.target.textContent === "NEWEST") {
-      setSection("new");
+      setIds(newIds);
     }
     return;
   };
@@ -22,8 +21,8 @@ export const NewsSection = () => {
       <div className={styles.menu}>
         <h1>News</h1>
         <div className={styles.categories} onClick={handleClick}>
-          <h5 className={section === "top" && styles.selected}>POPULAR</h5>
-          <h5 className={section === "new" && styles.selected}>NEWEST</h5>
+          <h5 className={ids === topIds && styles.selected}>POPULAR</h5>
+          <h5 className={ids === newIds && styles.selected}>NEWEST</h5>
         </div>
       </div>
       <ol className={styles.items}>
@@ -34,7 +33,7 @@ export const NewsSection = () => {
         ))}
       </ol>
       <Link
-        to={section === "top" ? "/Top/1" : "/News/1"}
+        to={ids === topIds ? "/Top/1" : "/News/1"}
         className={styles.section_page_link}
       >
         View More &gt;

@@ -3,11 +3,9 @@ import { Pagination } from "../components/pagination";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./list.module.css";
-import useFetch from "../hooks/useFetch";
 
-export const AskList = () => {
+export const AskList = ({ ids }) => {
   let params = useParams();
-  const ids = useFetch(`askstories.json`);
   const [itemIds, setItemIds] = useState([]);
 
   useEffect(() => {

@@ -7,7 +7,7 @@ import App from "./App";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/HackerNews-react">
       <App />
     </BrowserRouter>
   </StrictMode>,

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HackerNews-react/static/css/main.9634895a.css",
-    "main.js": "/HackerNews-react/static/js/main.09cd405d.js",
+    "main.js": "/HackerNews-react/static/js/main.ea131d1e.js",
     "static/media/Logo.svg": "/HackerNews-react/static/media/Logo.b623483e8fd77489e5879741ed0c7efc.svg",
     "static/media/askIcon.svg": "/HackerNews-react/static/media/askIcon.ee9d52c104af938564fa07b67e2e4a99.svg",
     "static/media/showIcon.svg": "/HackerNews-react/static/media/showIcon.485902d070423cce93d31ad4ee0413c7.svg",
@@ -25,10 +25,10 @@
     "static/media/user-circle2.svg": "/HackerNews-react/static/media/user-circle2.90653f78a560aa43d61ea11522514a73.svg",
     "static/media/minus.svg": "/HackerNews-react/static/media/minus.8f7a0c65852aa5eec8379e3b384df71a.svg",
     "main.9634895a.css.map": "/HackerNews-react/static/css/main.9634895a.css.map",
-    "main.09cd405d.js.map": "/HackerNews-react/static/js/main.09cd405d.js.map"
+    "main.ea131d1e.js.map": "/HackerNews-react/static/js/main.ea131d1e.js.map"
   },
   "entrypoints": [
     "static/css/main.9634895a.css",
-    "static/js/main.09cd405d.js"
+    "static/js/main.ea131d1e.js"
   ]
 }
